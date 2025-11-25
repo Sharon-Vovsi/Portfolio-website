@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharon Web Portfolio</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="fanta.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a href="">Sharon V</a>
+        <nav>
+            <a target="_blank" href="https://github.com/Sharon-Vovsi"><i class="fa-brands fa-github"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/sharon-vovsi-ab32a7340/"><i class="fa-brands fa-linkedin"></i></a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="intro-header">
+                <h1>Hello! I'm Sharon...</h1>
+                <p>Aspiring Web Developer</p>
+            </div>
+            <h5 class="intro-describtion">
+                I am an aspiring web developer, based in Canada. I like to learn new things and create cool projects!
+                I play video games in my free time. 
+            </h5>
+            <div class="links-container">
+                <i class="fa-solid link-arrow fa-arrow-right"></i>
+                <a href="mailto:sharon.vovsi@gmail.com">
+                    Email me</a>
+                <a target="_blank" href="https://github.com/Sharon-Vovsi">
+                    Github</a>
+                <a target="_blank" href="https://www.linkedin.com/in/sharon-vovsi-ab32a7340/">
+                    Linkedin</a>
+            </div>
+
+            <div id="play-game">
+                <button onclick="playGame()">Play game???</button>
+            </div>
+            <div style="display:none;" class="color-div">
+                <h4>Pick a color</h4>
+                <p style="display:none;">Great... now it's ruined!</p>
+                <input type="color" id="color-picker"
+                onchange="changeColor()" value="#0084ff"/>
+                <button style="display:none;" onclick="resetColor()">Reset</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Technologies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>React.JS | Node.JS & Express.JS |</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Backend</td>
+                        <td>PostgreSQL | Vite </td>
+                    </tr>
+                    <tr>
+                        <td>Design</td>
+                        <td>FantaCSS | TailwindCSS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Latest Projects</h2>
+            <div class="cards-grid">
+                <div class="project-card">
+                    <div>
+                        <p>Nov 13, 2025</p>
+                        <h4>Brogram</h4>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>ReactJS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>FantaCSS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>JavaScript</p>
+                            </div>
+                        </div>
+                        <p>The Simple 30 Workouts Training Plan. Made with Full Stack Course | Build 4 Projects & Get Hired by smoljames</p>
+                        <div class="project-links">
+                            <a target="_blank" href="https://brogramsv.netlify.app/">Live</a>
+                            <a target="_blank" href="https://github.com/Sharon-Vovsi/2_brogram">Github</a>
+                        </div>
+                    </div>
+                    <div class="img-div">
+                        <img class="big-img" src="./public/brogram.png" alt=""/>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <p>Nov 23, 2025</p>
+                        <h4>Todo-List-Postgres</h4>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>ReactJS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>TailwingCSS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>PostgreSQL</p>
+                            </div>
+                        </div>
+                        <p>A Todo List app with a Postgres database backend. Made with this video
+                            "Learn PostgreSQL building a Full-Stack Todo List App!" by The Normie Programmer</p>
+                        
+                        <div class="project-links">
+                            <a target="_blank" href="">Live</a>
+                            <a target="_blank" href="https://github.com/Sharon-Vovsi/ToDo-List-Postgres">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="img-div">
+                        <img class="big-img"
+                            src="./public/todo-list.png"
+                            alt="todo list photo" />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <P>By <a>Sharon-Vovsi</a> ⭐ the repo on <a target="_blank" href="https://github.com/Sharon-Vovsi/Portfolio-site">Github</a></P>
+    </footer>
+    <script>
+        // This is where we create the interactivity for our little color switching game
+
+        // 1. select all the html elements so that we can later manipulate them
+        const body = document.querySelector('body')
+        const colorInput = document.getElementById('color-picker')
+        const colorDiv = document.querySelector('.color-div')
+        const hiddenText = document.querySelector('.color-div p')
+        const resetBtn = document.querySelector('.color-div button')
+        const playBtn = document.getElementById('play-game')
+
+         // 2. create the functions
+         function playGame() {
+            // this function enables the play of the game by showing the color selector input
+            colorDiv.style.display = 'block'
+            playBtn.style.display = 'none'
+        }
+
+        function changeColor() {
+            // take the users selected color on the input, and assign it to be the background color of the website
+            const selectedColor = colorInput.value
+            body.style.background = selectedColor
+            resetBtn.style.display = 'block'
+            hiddenText.style.display = 'block'
+            colorInput.style.display = 'none'
+        }
+
+        function resetColor() {
+            body.style.background = 'white'
+            colorInput.style.display = 'block'
+            playBtn.style.display = 'block'
+
+            hiddenText.style.display = 'none'
+            resetBtn.style.display = 'none'
+            colorDiv.style.display = 'none'
+        }
+
+         // 3. is to assign the functions to the buttons by adding them function call to the actual elements (done above in the html code)
+    </script>
+</body>
+</html>
